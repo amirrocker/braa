@@ -122,7 +122,7 @@ if __name__ == "__main__":
 Aufruf-Beispiel:
 
 ```bash
-TELEGRAM_BOT_TOKEN="8245329841:AAEsnNbE6myDpiWO-7KLrNAImaSxc5u9vLo" \
+TELEGRAM_BOT_TOKEN="" \
 TELEGRAM_CHAT_ID="5651884705" \
 python3 telegram_notify.py "Test"
 ```
