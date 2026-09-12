@@ -39,11 +39,11 @@ Der 403-Fehler kam übrigens von der **Proxy-/Gateway-Ebene** (CONNECT-Tunnel wu
 - Bot-Name: **TechkompTestBot**, Username: **@techkomptestbot**
 - Bot-Token (⚠️ im Klartext im Chat geteilt, siehe Sicherheitshinweise unten):
   ```
-  8245329841:AAEsnNbE6myDpiWO-7KLrNAImaSxc5u9vLo
+  
   ```
 - Chat-ID (Amirs Chat mit dem Bot):
   ```
-  5651884705
+  
   ```
 - Verifiziert per `getMe` (Bot-Identität bestätigt) und `getUpdates` (Chat-ID durch Senden einer Nachricht an den Bot ermittelt).
 - Testnachricht erfolgreich verschickt: `"Testnachricht von Claude Routine ✅"` — Zustellung von Amir bestätigt.
@@ -138,7 +138,7 @@ python3 telegram_notify.py "Test"
 - **Ausführungsort:** rein in der Cloud, kein lokales Gerät gebunden (`"not bound: local_device_not_required — this task will run in the cloud only"`)
 - **Prompt der Routine** (vereinfacht wiedergegeben — führt bei jedem Lauf einen `curl`-Aufruf an die Telegram Bot API aus):
   ```
-  curl -sS -X POST "https://api.telegram.org/bot8245329841:AAEsnNbE6myDpiWO-7KLrNAImaSxc5u9vLo/sendMessage" \
+  curl -sS -X POST "https://api.telegram.org/xxx/sendMessage" \
     -H "Content-Type: application/json" \
     -d '{"chat_id": "5651884705", "text": "Routine läuft ✅ (stündlicher Test)"}'
   ```
@@ -160,7 +160,7 @@ Ergebnisse:
 3. `ListConnectors` mit Keyword "github" lieferte ein **leeres Ergebnis** — es existiert für diese Cowork-Session gar kein registrierter GitHub-MCP-Connector, obwohl Amir in den Account-Einstellungen eine "GitHub Integration" als verbunden sieht. Vermutung: Das ist eine andere, produktseitig getrennte Integration (z. B. für Claude-Code-eigene Repo-Funktionen/PR-Reviews), die dieser Cowork-Chat-Session keine Tools bereitstellt.
 4. Amir hat einen **GitHub Personal Access Token (fine-grained)** bereitgestellt:
    ```
-   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
+   
    ```
    - `GET https://api.github.com/user` mit diesem Token → **erfolgreich**, bestätigt Identität `amirrocker` (User-ID 13767108). Der Token selbst ist also gültig.
    - `GET https://api.github.com/repos/amirrocker/braa` mit demselben Token → weiterhin dieselbe **Anthropic-eigene Sperr-Meldung** ("GitHub access to this repository is not enabled for this session…"), nicht die reale GitHub-API-Antwort.
