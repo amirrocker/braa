@@ -1,0 +1,4 @@
+telegram_credentials
+.env
+__pycache__/
+*.pyc
